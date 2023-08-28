@@ -46,7 +46,7 @@ function showData(data,searchPd) {
     for (const phone of data) {
         console.log(phone);
         const div = document.createElement("div");
-        const CardStyles = "bg-base-400";
+        const CardStyles = "bg-base-400 my-6";
         
         const {phone_name} = phone;
         if (phone_name.includes(searchPd)) {
