@@ -21,11 +21,12 @@
 
     <title>Phone API</title>
 </head>
+<!-- onload="loadPhone()" -->
 
-<body class="max-w-6xl mx-auto">
+<body onload="loadPhone()" class="max-w-6xl mx-auto">
     <header class="my-10">
         <nav class="flex justify-between">
-            <h1 class="text-3xl font-bold">Cool Phones</h1>
+            <h1 class="text-3xl font-bold">Cool PhoneZ</h1>
             <button class="btn btn-primary">Sign Up</button>
         </nav>
     </header>
@@ -33,14 +34,25 @@
         <section>
 
         </section>
+        <!-- 
+            oppo
+            iphone
+            samsung
+
+         -->
         <section class="phone-container">
-            <div class="search-container flex justify-center space-x-2 my-10">
-                <input id="searchBox" type="text" placeholder="Search Phone here"
+            <!-- <div class="search-container flex justify-center space-x-2 my-10">
+                <input id="searchBox" type="text" placeholder="Search Phone By Brand here"
                     class="input input-bordered input-primary w-full max-w-xs" />
                 <button onclick="searchHandler()" class="btn btn-primary">Search</button>
+            </div> -->
+            <div class="search-container flex justify-center space-x-2 my-10">
+                <input id="searchProductBox" onkeydown="searchProduct()" type="text" placeholder="Search Phone here"
+                    class="input input-bordered input-primary w-full max-w-xs" />
+                <button onclick="searchProduct()" class="btn btn-primary">Search</button>
             </div>
             <div id="cardContainer" class="card-Container grid grid-cols-3 gap-10">
-                
+
             </div>
         </section>
     </main>
