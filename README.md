@@ -1,6 +1,5 @@
 # Cool-PhoneZ-api
-Github Link- https://github.com/NFRIDOY/hunting-phone-api.git
-Github Link- https://github.com/NFRIDOY/hunting-phone-api.git
+Github Link- https://github.com/NFRIDOY/Cool-PhoneZ-api
 
 ## API Links
 
