@@ -22,7 +22,7 @@
     <title>Phone API</title>
 </head>
 
-<body class="max-w-7xl mx-auto">
+<body class="max-w-6xl mx-auto">
     <header class="my-10">
         <nav class="flex justify-between">
             <h1 class="text-3xl font-bold">Cool Phones</h1>
@@ -31,10 +31,17 @@
     </header>
     <main>
         <section>
-            
-        </section>
-        <section >
 
+        </section>
+        <section class="phone-container">
+            <div class="search-container flex justify-center space-x-2 my-10">
+                <input id="searchBox" type="text" placeholder="Search Phone here"
+                    class="input input-bordered input-primary w-full max-w-xs" />
+                <button onclick="searchHandler()" class="btn btn-primary">Search</button>
+            </div>
+            <div id="cardContainer" class="card-Container grid grid-cols-3 gap-10">
+                
+            </div>
         </section>
     </main>
     <footer>
