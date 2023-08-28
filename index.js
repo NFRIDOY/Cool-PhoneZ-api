@@ -41,15 +41,19 @@ const loadPhone = async (search = "iphone") => {
 function showData(data,searchPd) {
     // Parent Element
     const phonesCard = document.getElementById("cardContainer");
-    console.log(data);
+    // console.log(data);
     phonesCard.innerHTML = ``;
     for (const phone of data) {
-        console.log(phone);
+        // console.log(phone);
         const div = document.createElement("div");
         const CardStyles = "bg-base-400 my-6";
         
-        const {phone_name} = phone;
-        if (phone_name.includes(searchPd)) {
+        const {phone_name,slug} = phone;
+        console.log("Name: " , phone_name);
+        console.log("searchPd: " , searchPd);
+        console.log("slug: " , slug);
+        console.log("slug: " , slug.includes(searchPd));
+        if (phone_name.includes(searchPd) || slug.includes(searchPd)) {
             div.innerHTML = `
             <div class="card w-96 ${CardStyles} shadow-xl">
                     <figure><img src="${phone["image"]}" alt="Shoes" /></figure>
@@ -94,7 +98,7 @@ function searchHandler() {
     const searchBox = document.getElementById("searchBox");
     const searchBoxValue = searchBox.value;
     const defaultValue = "samsung";
-    console.log(searchBoxValue);
+    // console.log(searchBoxValue);
     loadPhone(searchBoxValue || defaultValue, showData);
 
 }
@@ -103,7 +107,7 @@ function searchProduct() {
     const searchProductBox = document.getElementById("searchProductBox");
     const searchProductValue = searchProductBox.value;
     const defaultValue = "samsung";
-    console.log(searchProductValue);
+    // console.log(searchProductValue);
     loadPhone(searchProductValue.toLowerCase() || defaultValue, showData);
 
 }
