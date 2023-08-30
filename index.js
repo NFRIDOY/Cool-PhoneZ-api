@@ -38,10 +38,26 @@ const loadPhone = async (search = "iphone") => {
 
 
 // }
-function showData(data,searchPd) {
+function showData(phoneData,searchPd) {
     // Parent Element
     const phonesCard = document.getElementById("cardContainer");
-    // console.log(data);
+    const showAllBtn = document.getElementById("show-all-btn");
+    // console.log(phoneData.length);
+    let data = phoneData;
+    if(data.length > 27) {
+        data = phoneData.slice(0,7);
+        showAllBtn.classList.remove("hidden");
+    }
+    else {
+        data = data;
+        showAllBtn.classList.add("hidden");
+    }
+    // for (let index = 0; index < array.length; index++) {
+    //     const element = array[index];
+        
+    // }
+    
+    
     phonesCard.innerHTML = ``;
     for (const phone of data) {
         // console.log(phone);
@@ -49,10 +65,13 @@ function showData(data,searchPd) {
         const CardStyles = "bg-base-400 my-6";
         
         const {phone_name,slug} = phone;
-        console.log("Name: " , phone_name);
-        console.log("searchPd: " , searchPd);
-        console.log("slug: " , slug);
-        console.log("slug: " , slug.includes(searchPd));
+
+        // clg 
+        // console.log("Name: " , phone_name);
+        // console.log("searchPd: " , searchPd);
+        // console.log("slug: " , slug);
+        // console.log("slug: " , slug.includes(searchPd));
+
         if (phone_name.includes(searchPd) || slug.includes(searchPd)) {
             div.innerHTML = `
             <div class="card w-96 ${CardStyles} shadow-xl">
@@ -111,25 +130,25 @@ function searchProduct() {
     loadPhone(searchProductValue.toLowerCase() || defaultValue, showData);
 
 }
-const loadSliderIphone = async (search = "iphone") => {
-    if (true) {
-        const url = `https://openapi.programming-hero.com/api/phones?search=${search}`;
-        const res = await fetch(url)
-        const data = await res.json();
-        showData(data.data);
-    }
-    else {
-        alert("Phone Not Found");
-    }
-}
-const loadSliderSam = async (search = "samsung") => {
-    if (true) {
-        const url = `https://openapi.programming-hero.com/api/phones?search=${search}`;
-        const res = await fetch(url)
-        const data = await res.json();
-        showData(data.data);
-    }
-    else {
-        alert("Phone Not Found");
-    }
-}
+// const loadSliderIphone = async (search = "iphone") => {
+//     if (true) {
+//         const url = `https://openapi.programming-hero.com/api/phones?search=${search}`;
+//         const res = await fetch(url)
+//         const data = await res.json();
+//         showData(data.data);
+//     }
+//     else {
+//         alert("Phone Not Found");
+//     }
+// }
+// const loadSliderSam = async (search = "samsung") => {
+//     if (true) {
+//         const url = `https://openapi.programming-hero.com/api/phones?search=${search}`;
+//         const res = await fetch(url)
+//         const data = await res.json();
+//         showData(data.data);
+//     }
+//     else {
+//         alert("Phone Not Found");
+//     }
+// }
